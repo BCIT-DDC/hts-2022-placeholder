@@ -1,7 +1,8 @@
-import * as React from 'react';
+import React from 'react';
+import HTS from '../components/HTS';
 
-function IndexPage() {
-    return <div>test</div>;
+import 'normalize.css';
+
+export default function IndexPage() {
+    return <HTS />;
 }
-
-export default IndexPage;
