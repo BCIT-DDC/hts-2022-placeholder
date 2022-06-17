@@ -9,14 +9,17 @@ export default function TextInput({
     onChangeHandler,
 }) {
     return (
-        <>
-            <label htmlFor={name}>{label}</label>
+        <div className="flex flex-col">
+            <label className="font-bold text-lg mb-1" htmlFor={name}>
+                {label}
+            </label>
             <input
+                className="border border-gray-300 rounded"
                 type={type}
                 name={name}
                 placeholder={placeholder}
                 onChange={(e) => onChangeHandler(e.target.value)}
             />
-        </>
+        </div>
     );
 }

@@ -5,13 +5,14 @@ import SignUpForm from './SignUpForm';
 function SignUp() {
     const handleSubmit = async (formData) => {
         const { EMAIL, FNAME, LNAME, SCHOOL } = formData;
+        console.log(formData);
 
-        const res = await addToMailChimp(EMAIL, {
-            FNAME: 'asd',
-            LNAME: 'asd',
-            SCHOOL: 'asd',
-        });
-        console.log(res);
+        // const res = await addToMailChimp(EMAIL, {
+        //     FNAME,
+        //     LNAME,
+        //     SCHOOL,
+        // });
+        // console.log(res);
     };
 
     return (
@@ -23,3 +24,4 @@ function SignUp() {
 }
 
 export default SignUp;
+    
