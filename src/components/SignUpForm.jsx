@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable react/prop-types */
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import TextInput from './TextInput';
 
-function SignUpForm({ onValidated, message, status }) {
+function SignUpForm({ onValidated, validation, setValidation, reset }) {
     const [email, setEmail] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -12,17 +12,26 @@ function SignUpForm({ onValidated, message, status }) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        email &&
+        if (
+            email &&
             email.indexOf('@') > -1 &&
             firstName &&
             lastName &&
-            school &&
+            school
+        ) {
             onValidated({
                 EMAIL: email,
                 FNAME: firstName,
                 LNAME: lastName,
                 SCHOOL: school,
             });
+            setValidation('');
+        } else {
+            setValidation({
+                isValid: false,
+                msg: 'Please fill out all the fields',
+            });
+        }
     }
 
     return (
@@ -67,8 +76,15 @@ function SignUpForm({ onValidated, message, status }) {
                     placeholder="School"
                 />
             </div>
+            <span
+                className={`mt-2 text-lg ${
+                    validation.isValid ? 'text-green-600' : 'text-red-600'
+                }`}
+            >
+                {validation.msg}
+            </span>
             <input
-                className="cursor-pointer bg-green-500 py-4 text-white rounded mt-10"
+                className="text-lg font-semibold cursor-pointer bg-green-500 py-4 text-white rounded mt-10"
                 type="submit"
                 value="Register Now"
             />
