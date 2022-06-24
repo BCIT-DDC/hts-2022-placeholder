@@ -7,9 +7,6 @@ function SignUp() {
         isValid: false,
         msg: '',
     });
-    const [reset, setReset] = useState(false);
-
-    console.log(reset);
 
     const handleSubmit = async (formData) => {
         const { EMAIL, FNAME, LNAME, SCHOOL } = formData;
@@ -23,7 +20,6 @@ function SignUp() {
         if (result === 'error') {
             return setValidation({ isValid: false, msg });
         }
-        setReset(true);
         return setValidation({ isValid: true, msg });
     };
 
@@ -33,7 +29,6 @@ function SignUp() {
                 onValidated={handleSubmit}
                 validation={validation}
                 setValidation={setValidation}
-                reset={reset}
             />
         </div>
     );

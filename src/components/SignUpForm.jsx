@@ -4,7 +4,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import TextInput from './TextInput';
 
-function SignUpForm({ onValidated, validation, setValidation, reset }) {
+function SignUpForm({ onValidated, validation, setValidation }) {
     const [email, setEmail] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -37,7 +37,7 @@ function SignUpForm({ onValidated, validation, setValidation, reset }) {
     return (
         <form
             onSubmit={(e) => handleSubmit(e)}
-            className="flex flex-col my-24 w-4/6 mx-auto"
+            className="flex flex-col my-24 mx-auto"
         >
             <h3 className="text-2xl font-bold mb-6">
                 Sign up to recieve updates!
@@ -84,7 +84,7 @@ function SignUpForm({ onValidated, validation, setValidation, reset }) {
                 {validation.msg}
             </span>
             <input
-                className="text-lg font-semibold cursor-pointer bg-green-500 py-4 text-white rounded mt-10"
+                className="text-lg font-semibold cursor-pointer bg-green-500 py-4 text-white rounded mt-10 hover:bg-green-600 ease-in-out duration-100"
                 type="submit"
                 value="Register Now"
             />
