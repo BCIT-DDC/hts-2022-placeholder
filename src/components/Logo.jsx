@@ -87,11 +87,11 @@ function LogoIcon(props) {
 export default function Logo() {
     return (
         <a href="/" aria-label="Home">
-            {/* <img
-                    className="block h-6 w-auto"
-                    src="/images/logo.svg"
-                    alt="Logo"
-                /> */}
+            <img
+                className="block h-6 w-auto"
+                src="/images/logo.svg"
+                alt="Logo"
+            />
             <LogoIcon className="block h-6 sm:h-7 w-auto" alt="Logo" />
         </a>
     );

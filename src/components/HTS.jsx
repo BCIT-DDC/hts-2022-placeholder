@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 
 import NavBar from './NavBar';
 import MainContent from './MainContent';
+import Sidebar from './Sidebar';
 
 const siteUrl = process.env.SITE_URL || `https://www.bcit-hts.com`;
 
@@ -101,13 +102,18 @@ export default function HTS() {
             <Helmet>
                 <body className="hts-container font-body text-gray-600 h-full" />
             </Helmet>
-            <div className="main-container bg-primary-blue h-full">
+            <div className="main-container bg-cover bg-hero-bg h-full">
                 {/* <header className="header-container sticky top-0 z-40">
                     <NavBar />
                 </header> */}
-                <main className="">
-                    <MainContent />
-                </main>
+                <div className="flex">
+                    <main className="">
+                        <MainContent />
+                    </main>
+                    {/* <aside className="">
+                        <Sidebar />
+                    </aside> */}
+                </div>
                 {/* <footer><Footer /></footer> */}
             </div>
         </>
