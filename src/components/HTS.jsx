@@ -100,14 +100,14 @@ export default function HTS() {
                 />
             </Helmet>
             <Helmet>
-                <body className="hts-container font-body text-gray-600 h-full" />
+                <body className="hts-container font-body h-full text-white font-bold  " />
             </Helmet>
-            <div className="main-container bg-cover bg-hero-bg h-screen">
+            <div className="flex items-center justify-center main-container h-screen bg-cover bg-hero-bg ">
                 {/* <header className="header-container sticky top-0 z-40">
                     <NavBar />
                 </header> */}
-                <div className="flex h-5/6">
-                    <main className="">
+                <div className="flex w-5/6 w-screen h-5/6">
+                    <main className="w-5/6">
                         <MainContent />
                     </main>
                     <aside className="">
