@@ -102,17 +102,17 @@ export default function HTS() {
             <Helmet>
                 <body className="hts-container font-body text-gray-600 h-full" />
             </Helmet>
-            <div className="main-container bg-cover bg-hero-bg h-full">
+            <div className="main-container bg-cover bg-hero-bg h-screen">
                 {/* <header className="header-container sticky top-0 z-40">
                     <NavBar />
                 </header> */}
-                <div className="flex">
+                <div className="flex h-5/6">
                     <main className="">
                         <MainContent />
                     </main>
-                    {/* <aside className="">
+                    <aside className="">
                         <Sidebar />
-                    </aside> */}
+                    </aside>
                 </div>
                 {/* <footer><Footer /></footer> */}
             </div>

@@ -1,4 +1,6 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
+import SocialMediaLogos from './SocialMediaLogos';
 import FacebookLogo from '../images/facebook-logo.svg';
 import InstagramLogo from '../images/instagram-logo.svg';
 import TwitterLogo from '../images/twitter-logo.svg';
@@ -7,34 +9,22 @@ import WebLogo from '../images/www-logo.svg';
 
 export default function Sidebar() {
     return (
-        <aside className="flex">
-            <ul>
-                <li>
-                    <a href="/" aria-label="Hack to School Facebook">
-                        <FacebookLogo />
-                    </a>
-                </li>
-                <li>
-                    <a href="/" aria-label="Hack to School Instagram">
-                        <InstagramLogo />
-                    </a>
-                </li>
-                <li>
-                    <a href="/" aria-label="Hack to School Twitter">
-                        <TwitterLogo />
-                    </a>
-                </li>
-                <li>
-                    <a href="/" aria-label="Hack to School Twitter">
-                        <GitHubLogo alt="GitHub Logo" />
-                    </a>
-                </li>
-                <li>
-                    <a href="/" aria-label="Hack to School Twitter">
-                        <WebLogo />
-                    </a>
-                </li>
-            </ul>
-        </aside>
+        <ul className="flex flex-col h-full justify-center">
+            <a href="/" aria-label="Hack to School Facebook">
+                <SocialMediaLogos src={FacebookLogo} alt="Facebook Logo"/>
+            </a>
+            <a href="/" aria-label="Hack to School Instgram">
+                <SocialMediaLogos src={InstagramLogo} alt="Instagram Logo"/>
+            </a>
+            <a href="/" aria-label="Hack to School Twitter">
+                <SocialMediaLogos src={TwitterLogo} alt="Facebook Logo" />
+            </a>
+            <a href="/" aria-label="Hack to School Github">
+                <SocialMediaLogos src={GitHubLogo} alt="GitHub Logo"/>
+            </a>
+            <a href="/" aria-label="Hack to School Website">
+                <SocialMediaLogos href="/" src={WebLogo} alt="World Wide Web Logo"/>
+            </a>
+        </ul>
     );
 }
